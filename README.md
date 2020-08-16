@@ -2,7 +2,7 @@
 
 ## Build
 
-`docker build -t highsupply/docker-alpine-node:latest`
+`docker build . -t highsupply/docker-alpine-node:latest`
 
 ## Deploy
 
