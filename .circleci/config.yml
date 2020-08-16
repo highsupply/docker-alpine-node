@@ -11,6 +11,9 @@ jobs:
           name: Build Docker image.
           command: docker build . -t highsupply/docker-alpine-node:latest
       - run:
+          name: Login to Docker Hub.
+          command: docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+      - run:
           name: Push Docker image.
           command: docker push highsupply/docker-alpine-node:latest
 
