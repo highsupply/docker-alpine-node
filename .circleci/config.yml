@@ -1,0 +1,16 @@
+version: 2.1
+
+jobs:
+  build-push:
+    docker:
+      - image: circleci/golang:latest
+    steps:
+      - checkout
+      - run:
+          name: Build and push Docker image.
+          command: docker build -t highsupply/docker-alpine-node:latest && docker push highsupply/docker-alpine-node:latest
+
+workflows:
+  build-push:
+    jobs:
+      - build-push
