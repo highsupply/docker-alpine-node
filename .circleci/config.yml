@@ -5,6 +5,7 @@ jobs:
     docker:
       - image: circleci/golang:latest
     steps:
+      - setup_remote_docker
       - checkout
       - run:
           name: Build and push Docker image.
